@@ -14,6 +14,7 @@ public class CrearUsuario {
     public void crearUsuario(String username, String firstName, String lastName){
         SerenityRest.given()
                 .contentType("application/json")
+                .relaxedHTTPSValidation()
                 .body("{\n" +
                         "  \"id\": 0,\n" +
                         "  \"username\": \""+username+"\",\n" +
@@ -24,7 +25,11 @@ public class CrearUsuario {
                         "  \"phone\": \"string\",\n" +
                         "  \"userStatus\": 0\n" +
                         "}")
-                .post(CREATE_USER);
+                .log().all()
+                .post(CREATE_USER)
+                .then()
+                .log().all()
+        ;
 
     }
 }
