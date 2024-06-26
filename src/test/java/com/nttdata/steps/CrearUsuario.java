@@ -1,4 +1,4 @@
-package com.nttdata.petstore;
+package com.nttdata.steps;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;
@@ -31,5 +31,15 @@ public class CrearUsuario {
                 .log().all()
         ;
 
+    }
+
+    public void validarType(String type) {
+        restAssuredThat(response -> response.body("'type'", equalTo(type)));
+        System.out.println("Type: " + SerenityRest.lastResponse().body().path("type").toString());
+        System.out.println(SerenityRest.lastResponse().print());
+    }
+
+    public void validarCodigoRespuesta(int statusCode) {
+        restAssuredThat(response -> response.statusCode(statusCode));
     }
 }

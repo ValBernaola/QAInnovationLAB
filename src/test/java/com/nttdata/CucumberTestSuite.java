@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty"},
         features = "classpath:features",
-        tags = "@test1"
+        tags = "@pruebaStepDef"   //  ==> Definir el @tag  a ejecutar
 )
 public class CucumberTestSuite {
 }

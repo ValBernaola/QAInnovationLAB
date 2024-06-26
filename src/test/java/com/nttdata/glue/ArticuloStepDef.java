@@ -1,5 +1,6 @@
-package com.nttdata.place;
+package com.nttdata.glue;
 
+import com.nttdata.steps.ArticuloStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
