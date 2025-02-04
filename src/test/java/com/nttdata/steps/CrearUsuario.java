@@ -40,6 +40,7 @@ public class CrearUsuario {
     }
 
     public void validarCodigoRespuesta(int statusCode) {
+
         restAssuredThat(response -> response.statusCode(statusCode));
     }
 }
